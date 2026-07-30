@@ -387,28 +387,30 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentGalleryMedia = [];
     let currentGalleryIndex = 0;
 
-    if (dateRows.length > 0 && galleryModal) {
-        dateRows.forEach(row => {
-            row.addEventListener('click', () => {
-                const venue = row.getAttribute('data-venue');
-                const location = row.getAttribute('data-location');
-                const date = row.getAttribute('data-date');
-                const mediaJson = row.getAttribute('data-media');
+    const datesContainer = document.querySelector('.fechas-section');
+    if (datesContainer && galleryModal) {
+        datesContainer.addEventListener('click', (e) => {
+            const row = e.target.closest('.date-row[data-media]');
+            if (!row) return;
 
-                try {
-                    currentGalleryMedia = JSON.parse(mediaJson);
-                } catch (e) {
-                    currentGalleryMedia = [];
-                }
+            const venue = row.getAttribute('data-venue');
+            const location = row.getAttribute('data-location');
+            const date = row.getAttribute('data-date');
+            const mediaJson = row.getAttribute('data-media');
 
-                if (currentGalleryMedia.length === 0) return;
+            try {
+                currentGalleryMedia = JSON.parse(mediaJson);
+            } catch (err) {
+                currentGalleryMedia = [];
+            }
 
-                galleryVenueName.textContent = venue;
-                galleryLocation.innerHTML = `${location} &bull; ${date}`;
-                currentGalleryIndex = 0;
+            if (!currentGalleryMedia || currentGalleryMedia.length === 0) return;
 
-                openGalleryModal();
-            });
+            if (galleryVenueName) galleryVenueName.textContent = venue;
+            if (galleryLocation) galleryLocation.innerHTML = `${location} &bull; ${date}`;
+            currentGalleryIndex = 0;
+
+            openGalleryModal();
         });
     }
 
@@ -463,22 +465,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function renderGallerySlide() {
         const itemSrc = currentGalleryMedia[currentGalleryIndex];
+        if (!itemSrc) return;
+
         galleryCounter.textContent = `${currentGalleryIndex + 1} / ${currentGalleryMedia.length}`;
 
         if (galleryVideo) {
             galleryVideo.pause();
         }
 
-        const isVideo = itemSrc.endsWith('.mp4') || itemSrc.endsWith('.webm');
+        const isVideo = itemSrc.toLowerCase().endsWith('.mp4') || itemSrc.toLowerCase().endsWith('.webm');
 
         if (isVideo) {
-            galleryImg.style.display = 'none';
-            galleryVideo.style.display = 'block';
-            galleryVideo.src = itemSrc;
+            if (galleryImg) galleryImg.style.display = 'none';
+            if (galleryVideo) {
+                galleryVideo.style.display = 'block';
+                galleryVideo.src = itemSrc;
+                galleryVideo.load();
+            }
         } else {
-            galleryVideo.style.display = 'none';
-            galleryImg.style.display = 'block';
-            galleryImg.src = itemSrc;
+            if (galleryVideo) galleryVideo.style.display = 'none';
+            if (galleryImg) {
+                galleryImg.style.display = 'block';
+                galleryImg.src = itemSrc;
+            }
         }
     }
 
