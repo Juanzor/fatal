@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>FATAL</title>
-    <meta name="description" content="Sitio oficial de la banda de Metal FATAL. Escuchá nuestro EP homónimo y enterate de nuestro historial de fechas y lanzamientos.">
-    <link rel="icon" type="image/png" href="assets/logo.png">
-    
+    <meta name="description"
+        content="Sitio oficial de la banda de Metal FATAL. Escuchá nuestro EP homónimo y enterate de nuestro historial de fechas y lanzamientos.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+
     <!-- Distinctive Typography for Metal Aesthetics -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=New+Rocker&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=New+Rocker&family=Inter:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+
     <!-- GSAP for Professional Smooth Transitions & Reveals -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    
+
     <!-- Smooth Scroll Library (Lenis) matching portfolio -->
     <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
-    
+
     <!-- FontAwesome for Premium Social & Control Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Transparent Navigation Header -->
@@ -32,9 +37,10 @@
             <a href="#hero" class="brand-link" aria-label="FATAL Inicio">
                 <img src="assets/logo.png" alt="FATAL" class="nav-logo">
             </a>
-            
+
             <!-- Accessible Burger Toggle -->
-            <button class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="nav-menu">
+            <button class="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false"
+                aria-controls="nav-menu">
                 <span></span>
                 <span></span>
             </button>
@@ -42,8 +48,8 @@
             <nav id="nav-menu" class="nav-menu">
                 <ul class="nav-links">
                     <li><a href="#hero" class="nav-item">Inicio</a></li>
-                    <li><a href="#ep" class="nav-item">El EP</a></li>
-                    <li><a href="#la-banda" class="nav-item">La Banda</a></li>
+                    <li><a href="#ep" class="nav-item">EP</a></li>
+                    <li><a href="#la-banda" class="nav-item">Integrantes</a></li>
                     <li><a href="#fechas" class="nav-item">Fechas</a></li>
                 </ul>
             </nav>
@@ -80,12 +86,13 @@
                     <span class="subtitle-tag">Lanzamiento</span>
                     <h2 class="section-title">EP Homónimo: FATAL</h2>
                 </div>
-                
+
                 <div class="ep-grid">
                     <!-- Album Cover Only -->
                     <div class="ep-media-column">
                         <div class="album-art-container">
-                            <img src="assets/portada.jpg" alt="Portada del EP FATAL con un Falcon Verde y escena urbana" class="album-cover-img">
+                            <img src="assets/portada.jpg" alt="Portada del EP FATAL con un Falcon Verde y escena urbana"
+                                class="album-cover-img">
                             <div class="album-overlay-gradient"></div>
                         </div>
                     </div>
@@ -95,7 +102,8 @@
                         <div class="tracklist-container">
                             <ul class="track-list" id="track-list-ul">
                                 <!-- Track 1 -->
-                                <li class="track-item" data-track-index="1" data-track-src="audio/falcon_verde.mp3" data-track-title="El Falcon Verde" data-track-duration="03:05">
+                                <li class="track-item" data-track-index="1" data-track-src="audio/falcon_verde.mp3"
+                                    data-track-title="El Falcon Verde" data-track-duration="03:05">
                                     <button class="track-play-btn" aria-label="Reproducir El Falcon Verde">
                                         <i class="fa-solid fa-play"></i>
                                     </button>
@@ -109,7 +117,9 @@
                                     <span class="track-duration">03:05</span>
                                 </li>
                                 <!-- Track 2 -->
-                                <li class="track-item" data-track-index="2" data-track-src="audio/recuerdos_desoladores.mp3" data-track-title="Recuerdos Desoladores" data-track-duration="02:25">
+                                <li class="track-item" data-track-index="2"
+                                    data-track-src="audio/recuerdos_desoladores.mp3"
+                                    data-track-title="Recuerdos Desoladores" data-track-duration="02:25">
                                     <button class="track-play-btn" aria-label="Reproducir Recuerdos Desoladores">
                                         <i class="fa-solid fa-play"></i>
                                     </button>
@@ -123,7 +133,8 @@
                                     <span class="track-duration">02:25</span>
                                 </li>
                                 <!-- Track 3 -->
-                                <li class="track-item" data-track-index="3" data-track-src="audio/ciudad_a_ciegas.mp3" data-track-title="Ciudad a Ciegas" data-track-duration="04:04">
+                                <li class="track-item" data-track-index="3" data-track-src="audio/ciudad_a_ciegas.mp3"
+                                    data-track-title="Ciudad a Ciegas" data-track-duration="04:04">
                                     <button class="track-play-btn" aria-label="Reproducir Ciudad a Ciegas">
                                         <i class="fa-solid fa-play"></i>
                                     </button>
@@ -137,30 +148,36 @@
                                     <span class="track-duration">04:04</span>
                                 </li>
                             </ul>
-                            
+
                             <!-- Streaming Links right below the track list, matching the track list width -->
                             <div class="streaming-links">
                                 <div class="stream-buttons">
-                                    <a href="https://open.spotify.com/intl-es/artist/2mWU70XhYWgnMF2HjNI0Ff?si=DUtNGfUOQfSt3R1K-uw0pw&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnAM7bPKrVikJR_j37v2KKQVKbJIERGoD5ABZB456bW-jdk7gd38ZBLttlfLU_aem_bxrBrf4490QoSL04SzYZ4Q&nd=1&dlsi=9e7e97ee2b3c4422" target="_blank" rel="noopener noreferrer" class="stream-btn" aria-label="Spotify oficial">
+                                    <a href="https://open.spotify.com/intl-es/artist/2mWU70XhYWgnMF2HjNI0Ff?si=DUtNGfUOQfSt3R1K-uw0pw&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnAM7bPKrVikJR_j37v2KKQVKbJIERGoD5ABZB456bW-jdk7gd38ZBLttlfLU_aem_bxrBrf4490QoSL04SzYZ4Q&nd=1&dlsi=9e7e97ee2b3c4422"
+                                        target="_blank" rel="noopener noreferrer" class="stream-btn"
+                                        aria-label="Spotify oficial">
                                         <i class="fab fa-spotify"></i>
                                         <span>Spotify</span>
                                     </a>
-                                    <a href="https://www.youtube.com/watch?v=OkkDHirW3TU" target="_blank" rel="noopener noreferrer" class="stream-btn" aria-label="YouTube oficial">
+                                    <a href="https://www.youtube.com/watch?v=OkkDHirW3TU" target="_blank"
+                                        rel="noopener noreferrer" class="stream-btn" aria-label="YouTube oficial">
                                         <i class="fab fa-youtube"></i>
                                         <span>YouTube</span>
                                     </a>
-                                    <a href="https://fatalmetal.bandcamp.com/album/fatal" target="_blank" rel="noopener noreferrer" class="stream-btn" aria-label="Bandcamp oficial">
+                                    <a href="https://fatalmetal.bandcamp.com/album/fatal" target="_blank"
+                                        rel="noopener noreferrer" class="stream-btn" aria-label="Bandcamp oficial">
                                         <i class="fab fa-bandcamp"></i>
                                         <span>Bandcamp</span>
                                     </a>
-                                    <a href="https://www.instagram.com/fatalbandaoficial/" target="_blank" rel="noopener noreferrer" class="stream-btn" aria-label="Instagram oficial">
+                                    <a href="https://www.instagram.com/fatalbandaoficial/" target="_blank"
+                                        rel="noopener noreferrer" class="stream-btn" aria-label="Instagram oficial">
                                         <i class="fab fa-instagram"></i>
                                         <span>Instagram</span>
                                     </a>
                                 </div>
                             </div>
-                            
-                            <div class="release-info" style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--color-text-muted); font-family: var(--font-body); letter-spacing: 1px;">
+
+                            <div class="release-info"
+                                style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--color-text-muted); font-family: var(--font-body); letter-spacing: 1px;">
                                 <span>Lanzamiento: 12 de diciembre de 2020</span>
                             </div>
                         </div>
@@ -175,22 +192,64 @@
                 <div class="section-title-wrapper">
                     <span class="subtitle-tag">Integrantes</span>
                     <h2 class="section-title">La Banda</h2>
-                    <p class="banda-description">FATAL es una banda de Metal formada en el año 2018 en Buenos Aires, Argentina.</p>
                 </div>
-                
+
+                <!-- Full Band Group Photo Banner -->
+                <div class="banda-group-banner">
+                    <img src="img/todos_pro.jpg" alt="FATAL Banda en Vivo" class="banda-group-img">
+                    <div class="banda-group-overlay"></div>
+                </div>
+
+                <!-- Band Bio Description Container -->
+                <div class="banda-bio-container">
+                    <p class="banda-bio-paragraph">
+                        FATAL es un power trío de metal formado en 2018 en Buenos Aires, Argentina, por el guitarrista y cantante Agustín Lagioia, el baterista Emiliano Carosella y el bajista Ramiro Cerviño.
+                    </p>
+                    <p class="banda-bio-paragraph">
+                        En 2020 la banda publicó su primer EP homónimo, integrado por sus tres primeras composiciones. Actualmente, FATAL se encuentra presentándose en vivo mientras trabaja en la grabación de su primer álbum de estudio.
+                    </p>
+                </div>
+
                 <div class="banda-members-grid">
-                    <div class="member-card">
-                        <div class="member-role">Guitarra y Voz</div>
-                        <div class="member-name">Agustín Lagioia</div>
-                    </div>
-                    <div class="member-card">
-                        <div class="member-role">Bajo</div>
-                        <div class="member-name">Ramiro Cerviño</div>
-                    </div>
-                    <div class="member-card">
-                        <div class="member-role">Batería</div>
-                        <div class="member-name">Emiliano Carosella</div>
-                    </div>
+                    <a href="https://www.instagram.com/rama.cerv/" target="_blank" rel="noopener noreferrer"
+                        class="member-card" aria-label="Instagram de Ramiro Cerviño">
+                        <div class="member-img-wrapper">
+                            <img src="img/rama.jpg" alt="Ramiro Cerviño - Bajo" class="member-img">
+                            <div class="member-img-overlay"></div>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-role">Bajo</div>
+                            <div class="member-name">
+                                Ramiro Cerviño <i class="fab fa-instagram member-ig-icon" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/aguseiscuerdas/" target="_blank" rel="noopener noreferrer"
+                        class="member-card" aria-label="Instagram de Agustín Lagioia">
+                        <div class="member-img-wrapper">
+                            <img src="img/agus.jpg" alt="Agustín Lagioia - Guitarra y Voz" class="member-img">
+                            <div class="member-img-overlay"></div>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-role">Guitarra y Voz</div>
+                            <div class="member-name">
+                                Agustín Lagioia <i class="fab fa-instagram member-ig-icon" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/emicarosella/" target="_blank" rel="noopener noreferrer"
+                        class="member-card" aria-label="Instagram de Emiliano Carosella">
+                        <div class="member-img-wrapper">
+                            <img src="img/emi.jpg" alt="Emiliano Carosella - Batería" class="member-img">
+                            <div class="member-img-overlay"></div>
+                        </div>
+                        <div class="member-info">
+                            <div class="member-role">Batería</div>
+                            <div class="member-name">
+                                Emiliano Carosella <i class="fab fa-instagram member-ig-icon" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -200,7 +259,7 @@
             <div class="container animate-up">
                 <div class="section-title-wrapper">
                     <span class="subtitle-tag">Cronología</span>
-                    <h2 class="section-title">Historial de Fechas</h2>
+                    <h2 class="section-title">Fechas</h2>
                 </div>
 
                 <!-- Tour Table Grid -->
@@ -217,74 +276,10 @@
                             <tbody>
                                 <tr class="date-row">
                                     <td class="date-cell">
-                                        <span class="date-day">14</span>
-                                        <div class="date-month-year">
-                                            <span class="date-month">Nov</span>
-                                            <span class="date-year">2025</span>
-                                        </div>
-                                    </td>
-                                    <td class="location-cell">
-                                        <span class="city">C.A.B.A.</span>
-                                        <span class="country">Buenos Aires</span>
-                                    </td>
-                                    <td class="venue-cell">
-                                        <span class="venue-name">El Teatro Flores</span>
-                                    </td>
-                                </tr>
-                                <tr class="date-row">
-                                    <td class="date-cell">
-                                        <span class="date-day">08</span>
-                                        <div class="date-month-year">
-                                            <span class="date-month">Oct</span>
-                                            <span class="date-year">2025</span>
-                                        </div>
-                                    </td>
-                                    <td class="location-cell">
-                                        <span class="city">Pompeya</span>
-                                        <span class="country">Buenos Aires</span>
-                                    </td>
-                                    <td class="venue-cell">
-                                        <span class="venue-name">Arena Sur</span>
-                                    </td>
-                                </tr>
-                                <tr class="date-row">
-                                    <td class="date-cell">
-                                        <span class="date-day">12</span>
+                                        <span class="date-day">5</span>
                                         <div class="date-month-year">
                                             <span class="date-month">Jul</span>
-                                            <span class="date-year">2025</span>
-                                        </div>
-                                    </td>
-                                    <td class="location-cell">
-                                        <span class="city">Quilmes</span>
-                                        <span class="country">Buenos Aires (Sur)</span>
-                                    </td>
-                                    <td class="venue-cell">
-                                        <span class="venue-name">Club Tucumán</span>
-                                    </td>
-                                </tr>
-                                <tr class="date-row">
-                                    <td class="date-cell">
-                                        <span class="date-day">23</span>
-                                        <div class="date-month-year">
-                                            <span class="date-month">May</span>
-                                            <span class="date-year">2025</span>
-                                        </div>
-                                    </td>
-                                    <td class="location-cell">
-                                        <span class="city">San Miguel</span>
-                                        <span class="country">Buenos Aires (Oeste)</span>
-                                    </td>
-                                    <td class="venue-cell">
-                                        <span class="venue-name">XLR Club</span>
-                                    </td>
-                                </tr>
-                                <tr class="date-row">
-                                    <td class="date-cell">
-                                        <span class="date-day">15</span>
-                                        <div class="date-month-year">
-                                            <span class="date-month">Mar</span>
-                                            <span class="date-year">2025</span>
+                                            <span class="date-year">2026</span>
                                         </div>
                                     </td>
                                     <td class="location-cell">
@@ -292,23 +287,39 @@
                                         <span class="country">C.A.B.A.</span>
                                     </td>
                                     <td class="venue-cell">
-                                        <span class="venue-name">Roxy Live</span>
+                                        <span class="venue-name">Liverpool Club</span>
                                     </td>
                                 </tr>
                                 <tr class="date-row">
                                     <td class="date-cell">
-                                        <span class="date-day">14</span>
+                                        <span class="date-day">18</span>
                                         <div class="date-month-year">
-                                            <span class="date-month">Dic</span>
-                                            <span class="date-year">2024</span>
+                                            <span class="date-month">Abr</span>
+                                            <span class="date-year">2026</span>
                                         </div>
                                     </td>
                                     <td class="location-cell">
-                                        <span class="city">Burzaco</span>
-                                        <span class="country">Buenos Aires (Sur)</span>
+                                        <span class="city">San Justo</span>
+                                        <span class="country">Buenos Aires</span>
                                     </td>
                                     <td class="venue-cell">
-                                        <span class="venue-name">El Amparo Bar</span>
+                                        <span class="venue-name">Rock La Ve</span>
+                                    </td>
+                                </tr>
+                                <tr class="date-row">
+                                    <td class="date-cell">
+                                        <span class="date-day">7</span>
+                                        <div class="date-month-year">
+                                            <span class="date-month">Feb</span>
+                                            <span class="date-year">2026</span>
+                                        </div>
+                                    </td>
+                                    <td class="location-cell">
+                                        <span class="city">Morón</span>
+                                        <span class="country">Buenos Aires</span>
+                                    </td>
+                                    <td class="venue-cell">
+                                        <span class="venue-name">Vade</span>
                                     </td>
                                 </tr>
                             </tbody>
@@ -325,34 +336,42 @@
             <div class="footer-logo">
                 <img src="assets/logo.png" alt="FATAL Logo" class="footer-logo-img">
             </div>
-            
+
             <nav class="footer-nav" aria-label="Navegación del pie de página">
                 <ul class="footer-nav-links">
                     <li><a href="#hero" class="footer-nav-item">Inicio</a></li>
-                    <li><a href="#ep" class="footer-nav-item">El EP</a></li>
-                    <li><a href="#la-banda" class="footer-nav-item">La Banda</a></li>
+                    <li><a href="#ep" class="footer-nav-item">EP</a></li>
+                    <li><a href="#la-banda" class="footer-nav-item">Integrantes</a></li>
                     <li><a href="#fechas" class="footer-nav-item">Fechas</a></li>
                 </ul>
             </nav>
-            
+
             <div class="footer-socials">
-                <a href="https://open.spotify.com/intl-es/artist/2mWU70XhYWgnMF2HjNI0Ff?si=DUtNGfUOQfSt3R1K-uw0pw&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnAM7bPKrVikJR_j37v2KKQVKbJIERGoD5ABZB456bW-jdk7gd38ZBLttlfLU_aem_bxrBrf4490QoSL04SzYZ4Q&nd=1&dlsi=9e7e97ee2b3c4422" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Spotify oficial de FATAL">
+                <a href="https://open.spotify.com/intl-es/artist/2mWU70XhYWgnMF2HjNI0Ff?si=DUtNGfUOQfSt3R1K-uw0pw&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnAM7bPKrVikJR_j37v2KKQVKbJIERGoD5ABZB456bW-jdk7gd38ZBLttlfLU_aem_bxrBrf4490QoSL04SzYZ4Q&nd=1&dlsi=9e7e97ee2b3c4422"
+                    target="_blank" rel="noopener noreferrer" class="social-icon-link"
+                    aria-label="Spotify oficial de FATAL">
                     <i class="fab fa-spotify"></i>
                 </a>
-                <a href="https://www.youtube.com/watch?v=OkkDHirW3TU" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="YouTube oficial de FATAL">
+                <a href="https://www.youtube.com/watch?v=OkkDHirW3TU" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="YouTube oficial de FATAL">
                     <i class="fab fa-youtube"></i>
                 </a>
-                <a href="https://fatalmetal.bandcamp.com/album/fatal" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Bandcamp oficial de FATAL">
+                <a href="https://fatalmetal.bandcamp.com/album/fatal" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="Bandcamp oficial de FATAL">
                     <i class="fab fa-bandcamp"></i>
                 </a>
-                <a href="https://www.instagram.com/fatalbandaoficial/" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Instagram oficial de FATAL">
+                <a href="https://www.instagram.com/fatalbandaoficial/" target="_blank" rel="noopener noreferrer"
+                    class="social-icon-link" aria-label="Instagram oficial de FATAL">
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
 
             <div class="footer-info">
-                <p class="copyright">&copy; 2026 FATAL. Todos los derechos reservados.</p>
-                <p class="credits">Sitio Oficial &bull; Buenos Aires, Argentina</p>
+                <div class="footer-info-text">
+                    <p class="copyright">&copy; 2026 FATAL. Todos los derechos reservados.</p>
+                    <p class="credits">Sitio Oficial &bull; Buenos Aires, Argentina</p>
+                </div>
+                <a href="https://wa.me/5491124986125" target="_blank" rel="noopener noreferrer" class="footer-creator-link">Made by Juanzor</a>
             </div>
         </div>
     </footer>
@@ -373,7 +392,7 @@
                     <span class="player-artist">FATAL — EP "FATAL"</span>
                 </div>
             </div>
-            
+
             <div class="player-controls">
                 <button id="player-prev-btn" class="player-control-btn" aria-label="Tema anterior">
                     <i class="fa-solid fa-backward-step"></i>
@@ -403,4 +422,5 @@
     <!-- Script Entrypoint -->
     <script src="script.js"></script>
 </body>
+
 </html>

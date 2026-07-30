@@ -207,7 +207,7 @@ body {
 }
 
 .nav-logo {
-    height: 75px;
+    height: 36px;
     width: auto;
     display: block;
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
@@ -352,8 +352,8 @@ body {
 }
 
 .hero-logo {
-    max-width: 480px;
-    width: 80%;
+    max-width: 360px;
+    width: 70%;
     height: auto;
     filter: drop-shadow(0 0 25px rgba(0, 0, 0, 0.95));
     transition: transform 0.6s var(--transition-curve), filter 0.6s ease;
@@ -726,67 +726,192 @@ body {
     border-bottom: 1px solid #1a1a1a;
 }
 
-.banda-description {
-    max-width: 600px;
-    margin: 1.5rem auto 0;
+/* Group Band Photo Banner */
+.banda-group-banner {
+    position: relative;
+    width: 100%;
+    max-width: 1050px;
+    margin: 2.5rem auto 3rem;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid #1c1c1c;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.04);
+    aspect-ratio: 16 / 9;
+    max-height: 520px;
+    background-color: #0a0a0a;
+}
+
+/* Band Bio Description Box */
+.banda-bio-container {
+    max-width: 1050px;
+    margin: 0 auto 3.8rem;
+    padding: 2.2rem 2.8rem;
+    background-color: var(--color-bg-secondary);
+    border: 1px solid #1a1a1a;
+    border-top: 3px solid var(--color-accent);
+    border-radius: var(--border-radius);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.banda-bio-paragraph {
+    font-size: 1.08rem;
     color: var(--color-text-secondary);
-    font-size: 1.1rem;
+    line-height: 1.75;
     font-weight: 300;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.3px;
+}
+
+.banda-bio-paragraph:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .banda-bio-container {
+        padding: 1.6rem 1.4rem;
+        margin: 0 auto 3rem;
+    }
+    .banda-bio-paragraph {
+        font-size: 1rem;
+    }
+}
+
+.banda-group-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    filter: contrast(108%) saturation(105%);
+    transition: transform 0.8s var(--transition-curve), filter 0.8s ease;
+}
+
+.banda-group-banner:hover .banda-group-img {
+    transform: scale(1.03);
+    filter: contrast(112%) saturation(110%);
+}
+
+.banda-group-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(7, 7, 7, 0.1) 0%, rgba(7, 7, 7, 0.5) 100%);
+    pointer-events: none;
 }
 
 .banda-members-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 900px;
-    margin: 3rem auto 0;
+    gap: 2.5rem;
+    max-width: 1050px;
+    margin: 0 auto;
 }
 
 .member-card {
     background-color: var(--color-bg-secondary);
     border: 1px solid #1a1a1a;
-    border-top: 3px solid #222;
-    padding: 2.5rem 2rem;
+    border-top: 3px solid #282828;
     border-radius: var(--border-radius);
     text-align: center;
     transition: all var(--transition-speed) var(--transition-curve);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .member-card:hover {
     border-color: var(--color-accent);
     border-top-color: var(--color-accent);
-    box-shadow: 0 15px 30px rgba(191, 19, 19, 0.15), 0 0 15px var(--color-accent-glow);
-    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(191, 19, 19, 0.2), 0 0 20px var(--color-accent-glow);
+    transform: translateY(-6px);
+}
+
+.member-img-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background-color: #0c0c0c;
+}
+
+.member-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    filter: grayscale(25%) contrast(105%);
+    transition: transform 0.6s var(--transition-curve), filter 0.6s var(--transition-curve);
+}
+
+.member-card:hover .member-img {
+    transform: scale(1.06);
+    filter: grayscale(0%) contrast(110%);
+}
+
+.member-img-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 45%;
+    background: linear-gradient(to top, var(--color-bg-secondary) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.member-info {
+    padding: 1.6rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 .member-role {
     font-family: var(--font-metal-secondary);
     color: var(--color-accent);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .member-name {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--color-text-primary);
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    line-height: 1;
+}
+
+.member-ig-icon {
+    font-size: 1.05rem;
+    color: var(--color-text-muted);
+    display: inline-block;
+    transform: translateY(2px);
+    transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.member-card:hover .member-ig-icon {
+    color: var(--color-accent);
+    transform: translateY(2px) scale(1.18);
 }
 
 @media (max-width: 768px) {
     .banda-members-grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 2rem;
+        max-width: 420px;
     }
 }
 
-@media (max-width: 576px) {
-    .banda-card {
-        padding: 2rem 1.5rem;
-    }
-}
 
 /* Tour Dates Section */
 .fechas-section {
@@ -1048,7 +1173,7 @@ body {
 }
 
 .footer-logo-img {
-    height: 200px;
+    height: 65px;
     width: auto;
     display: block;
     margin: 0 auto;
@@ -1110,17 +1235,30 @@ body {
 }
 
 .social-icon-link:hover {
-    color: #fff;
-    background-color: var(--color-accent);
     border-color: var(--color-accent);
-    box-shadow: 0 0 15px var(--color-accent-glow);
-    transform: translateY(-3px);
+    color: #fff;
+    background-color: var(--color-bg-tertiary);
+    box-shadow: 0 4px 12px rgba(191, 19, 19, 0.2), 0 0 15px var(--color-accent-glow);
 }
 
 .footer-info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #141414;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-info-text {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: flex-start;
+    gap: 0.3rem;
+    text-align: left;
 }
 
 .copyright {
@@ -1133,6 +1271,31 @@ body {
     color: #444;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.footer-creator-link {
+    font-size: 0.8rem;
+    color: #444;
+    text-decoration: none;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    transition: color var(--transition-speed) ease;
+}
+
+.footer-creator-link:hover {
+    color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+    .footer-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-info-text {
+        align-items: center;
+        text-align: center;
+    }
 }
 
 /* Sticky Bottom Audio Player */
