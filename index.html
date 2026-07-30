@@ -7,7 +7,7 @@
     <title>FATAL</title>
     <meta name="description"
         content="Sitio oficial de la banda de Metal FATAL. Escuchá nuestro EP homónimo y enterate de nuestro historial de fechas y lanzamientos.">
-    <link rel="icon" type="image/png" href="assets/favicon.png?v=1.0.2">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 
     <!-- Distinctive Typography for Metal Aesthetics -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,7 @@
     <!-- FontAwesome for Premium Social & Control Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="style.css?v=1.0.3">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -65,6 +65,17 @@
                     <img src="assets/logo.png" alt="FATAL Logo" class="hero-logo" id="hero-logo-img">
                 </div>
                 <h1 class="visually-hidden">FATAL</h1>
+            </div>
+            <div class="scroll-down-indicator" aria-hidden="true">
+                <a href="#ep" class="scroll-indicator-link" aria-label="Bajar al contenido">
+                    <span class="mouse">
+                        <span class="wheel"></span>
+                    </span>
+                    <span class="arrows">
+                        <span></span>
+                        <span></span>
+                    </span>
+                </a>
             </div>
         </section>
 
@@ -192,10 +203,13 @@
                 <!-- Band Bio Description Container -->
                 <div class="banda-bio-container">
                     <p class="banda-bio-paragraph">
-                        FATAL es un power trío de metal formado en 2018 en Buenos Aires, Argentina, por el guitarrista y cantante Agustín Lagioia, el baterista Emiliano Carosella y el bajista Ramiro Cerviño.
+                        FATAL es un power trío de metal formado en 2018 en Buenos Aires, Argentina, por el guitarrista y
+                        cantante Agustín Lagioia, el baterista Emiliano Carosella y el bajista Ramiro Cerviño.
                     </p>
                     <p class="banda-bio-paragraph">
-                        En 2020 la banda publicó su primer EP homónimo, integrado por sus tres primeras composiciones. Actualmente, FATAL se encuentra presentándose en vivo mientras trabaja en la grabación de su primer álbum de estudio.
+                        En 2020 la banda publicó su primer EP homónimo, integrado por sus tres primeras composiciones.
+                        Actualmente, FATAL se encuentra presentándose en vivo mientras trabaja en la grabación de su
+                        primer álbum de estudio.
                     </p>
                 </div>
 
@@ -263,7 +277,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="date-row">
+                                <tr class="date-row" data-venue="Liverpool Club" data-location="Palermo, CABA" data-date="5 Jul 2026" data-media='["img/LIVERPOOL CLUB/liverpool_1.jpg", "img/LIVERPOOL CLUB/liverpool_2.jpg", "img/LIVERPOOL CLUB/liverpool_3.jpg"]'>
                                     <td class="date-cell">
                                         <span class="date-day">5</span>
                                         <div class="date-month-year">
@@ -273,13 +287,35 @@
                                     </td>
                                     <td class="location-cell">
                                         <span class="city">Palermo</span>
-                                        <span class="country">C.A.B.A.</span>
+                                        <span class="country">CABA</span>
                                     </td>
                                     <td class="venue-cell">
-                                        <span class="venue-name">Liverpool Club</span>
+                                        <div class="venue-content">
+                                            <span class="venue-name">Liverpool Club</span>
+                                            <span class="view-gallery-pill"><i class="fa-solid fa-camera"></i> Ver Fotos (3)</span>
+                                        </div>
                                     </td>
                                 </tr>
-                                <tr class="date-row">
+                                <tr class="date-row" data-venue="Orange" data-location="San Martín, Buenos Aires" data-date="26 Abr 2026" data-media='["img/ORANGE/orange_1.jpg", "img/ORANGE/orange_2.jpg", "img/ORANGE/orange_3.jpg", "img/ORANGE/orange_4.jpg", "img/ORANGE/orange_5.jpg", "img/ORANGE/orange_6.jpg"]'>
+                                    <td class="date-cell">
+                                        <span class="date-day">26</span>
+                                        <div class="date-month-year">
+                                            <span class="date-month">Abr</span>
+                                            <span class="date-year">2026</span>
+                                        </div>
+                                    </td>
+                                    <td class="location-cell">
+                                        <span class="city">San Martín</span>
+                                        <span class="country">Buenos Aires</span>
+                                    </td>
+                                    <td class="venue-cell">
+                                        <div class="venue-content">
+                                            <span class="venue-name">Orange</span>
+                                            <span class="view-gallery-pill"><i class="fa-solid fa-camera"></i> Ver Fotos (6)</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="date-row" data-venue="Rock La Ve" data-location="San Justo, Buenos Aires" data-date="18 Abr 2026" data-media='["img/ROCK LA VE/rocklave_1.jpg", "img/ROCK LA VE/rocklave_2.jpg", "img/ROCK LA VE/rocklave_3.jpg", "img/ROCK LA VE/rocklave_4.jpg", "img/ROCK LA VE/rocklave_reel.mp4"]'>
                                     <td class="date-cell">
                                         <span class="date-day">18</span>
                                         <div class="date-month-year">
@@ -292,10 +328,13 @@
                                         <span class="country">Buenos Aires</span>
                                     </td>
                                     <td class="venue-cell">
-                                        <span class="venue-name">Rock La Ve</span>
+                                        <div class="venue-content">
+                                            <span class="venue-name">Rock La Ve</span>
+                                            <span class="view-gallery-pill"><i class="fa-solid fa-photo-film"></i> Fotos y Reel (5)</span>
+                                        </div>
                                     </td>
                                 </tr>
-                                <tr class="date-row">
+                                <tr class="date-row" data-venue="Vade" data-location="Morón, Buenos Aires" data-date="7 Feb 2026" data-media='["img/VADE 26/vade_1.jpg", "img/VADE 26/vade_2.jpg", "img/VADE 26/vade_3.jpg", "img/VADE 26/vade_4.jpg", "img/VADE 26/vade_reel.mp4"]'>
                                     <td class="date-cell">
                                         <span class="date-day">7</span>
                                         <div class="date-month-year">
@@ -308,9 +347,13 @@
                                         <span class="country">Buenos Aires</span>
                                     </td>
                                     <td class="venue-cell">
-                                        <span class="venue-name">Vade</span>
+                                        <div class="venue-content">
+                                            <span class="venue-name">Vade</span>
+                                            <span class="view-gallery-pill"><i class="fa-solid fa-photo-film"></i> Fotos y Reel (5)</span>
+                                        </div>
                                     </td>
                                 </tr>
+
                             </tbody>
                         </table>
                     </div>
@@ -360,7 +403,8 @@
                     <p class="copyright">&copy; 2026 FATAL. Todos los derechos reservados.</p>
                     <p class="credits">Sitio Oficial &bull; Buenos Aires, Argentina</p>
                 </div>
-                <a href="https://wa.me/5491124986125" target="_blank" rel="noopener noreferrer" class="footer-creator-link">Made by Juanzor</a>
+                <a href="https://wa.me/5491124986125" target="_blank" rel="noopener noreferrer"
+                    class="footer-creator-link">Made by Juanzor</a>
             </div>
         </div>
     </footer>
@@ -405,11 +449,49 @@
             <div class="player-visual-equalizer">
                 <span></span><span></span><span></span><span></span><span></span>
             </div>
+    <!-- Interactive Date Gallery Modal / Carousel -->
+    <div id="gallery-modal" class="gallery-modal" aria-hidden="true" role="dialog" aria-label="Galería de fotos de la fecha">
+        <div class="gallery-backdrop"></div>
+        <div class="gallery-content">
+            <!-- Close Button -->
+            <button id="gallery-close-btn" class="gallery-close-btn" aria-label="Cerrar galería">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Header Info -->
+            <div class="gallery-header">
+                <div class="gallery-title-wrapper">
+                    <h3 id="gallery-venue-name" class="gallery-venue-name">Liverpool Club</h3>
+                    <span id="gallery-location" class="gallery-location">Palermo, CABA &bull; 5 Jul 2026</span>
+                </div>
+                <div id="gallery-counter" class="gallery-counter">1 / 3</div>
+            </div>
+
+            <!-- Main Media Stage -->
+            <div class="gallery-stage">
+                <button id="gallery-prev-btn" class="gallery-nav-btn prev" aria-label="Imagen anterior">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                
+                <div class="gallery-media-container">
+                    <img id="gallery-img" src="" alt="Foto de la fecha" class="gallery-media-item">
+                    <video id="gallery-video" src="" controls class="gallery-media-item" style="display:none;"></video>
+                </div>
+
+                <button id="gallery-next-btn" class="gallery-nav-btn next" aria-label="Siguiente imagen">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Thumbnail Bar -->
+            <div id="gallery-thumbnails" class="gallery-thumbnails">
+                <!-- Dynamic thumbnails generated here -->
+            </div>
         </div>
     </div>
 
     <!-- Script Entrypoint -->
-    <script src="script.js?v=1.0.2"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

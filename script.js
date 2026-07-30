@@ -368,4 +368,164 @@ document.addEventListener('DOMContentLoaded', () => {
         const s = secs % 60;
         return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
     }
+
+    // ----------------------------------------------------------------------
+    // 5. Interactive Date Gallery Carousel Modal System
+    // ----------------------------------------------------------------------
+    const galleryModal = document.getElementById('gallery-modal');
+    const galleryCloseBtn = document.getElementById('gallery-close-btn');
+    const galleryVenueName = document.getElementById('gallery-venue-name');
+    const galleryLocation = document.getElementById('gallery-location');
+    const galleryCounter = document.getElementById('gallery-counter');
+    const galleryImg = document.getElementById('gallery-img');
+    const galleryVideo = document.getElementById('gallery-video');
+    const galleryPrevBtn = document.getElementById('gallery-prev-btn');
+    const galleryNextBtn = document.getElementById('gallery-next-btn');
+    const galleryThumbnails = document.getElementById('gallery-thumbnails');
+    const dateRows = document.querySelectorAll('.date-row[data-media]');
+
+    let currentGalleryMedia = [];
+    let currentGalleryIndex = 0;
+
+    if (dateRows.length > 0 && galleryModal) {
+        dateRows.forEach(row => {
+            row.addEventListener('click', () => {
+                const venue = row.getAttribute('data-venue');
+                const location = row.getAttribute('data-location');
+                const date = row.getAttribute('data-date');
+                const mediaJson = row.getAttribute('data-media');
+
+                try {
+                    currentGalleryMedia = JSON.parse(mediaJson);
+                } catch (e) {
+                    currentGalleryMedia = [];
+                }
+
+                if (currentGalleryMedia.length === 0) return;
+
+                galleryVenueName.textContent = venue;
+                galleryLocation.innerHTML = `${location} &bull; ${date}`;
+                currentGalleryIndex = 0;
+
+                openGalleryModal();
+            });
+        });
+    }
+
+    function openGalleryModal() {
+        galleryModal.classList.add('open');
+        galleryModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        renderGallerySlide();
+        renderGalleryThumbnails();
+    }
+
+    function closeGalleryModal() {
+        if (!galleryModal) return;
+        galleryModal.classList.remove('open');
+        galleryModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        if (galleryVideo) {
+            galleryVideo.pause();
+            galleryVideo.src = '';
+        }
+    }
+
+    if (galleryCloseBtn) {
+        galleryCloseBtn.addEventListener('click', closeGalleryModal);
+    }
+
+    const backdrop = document.querySelector('.gallery-backdrop');
+    if (backdrop) {
+        backdrop.addEventListener('click', closeGalleryModal);
+    }
+
+    if (galleryPrevBtn) {
+        galleryPrevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navigateGallery(-1);
+        });
+    }
+
+    if (galleryNextBtn) {
+        galleryNextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navigateGallery(1);
+        });
+    }
+
+    function navigateGallery(direction) {
+        if (currentGalleryMedia.length <= 1) return;
+        currentGalleryIndex = (currentGalleryIndex + direction + currentGalleryMedia.length) % currentGalleryMedia.length;
+        renderGallerySlide();
+        updateActiveThumbnail();
+    }
+
+    function renderGallerySlide() {
+        const itemSrc = currentGalleryMedia[currentGalleryIndex];
+        galleryCounter.textContent = `${currentGalleryIndex + 1} / ${currentGalleryMedia.length}`;
+
+        if (galleryVideo) {
+            galleryVideo.pause();
+        }
+
+        const isVideo = itemSrc.endsWith('.mp4') || itemSrc.endsWith('.webm');
+
+        if (isVideo) {
+            galleryImg.style.display = 'none';
+            galleryVideo.style.display = 'block';
+            galleryVideo.src = itemSrc;
+        } else {
+            galleryVideo.style.display = 'none';
+            galleryImg.style.display = 'block';
+            galleryImg.src = itemSrc;
+        }
+    }
+
+    function renderGalleryThumbnails() {
+        galleryThumbnails.innerHTML = '';
+        currentGalleryMedia.forEach((src, idx) => {
+            const thumb = document.createElement('div');
+            thumb.className = `gallery-thumb ${idx === currentGalleryIndex ? 'active' : ''}`;
+            
+            if (src.endsWith('.mp4') || src.endsWith('.webm')) {
+                thumb.innerHTML = `<video src="${src}#t=0.5" muted preload="metadata"></video>`;
+            } else {
+                thumb.innerHTML = `<img src="${src}" alt="Thumb ${idx + 1}">`;
+            }
+
+            thumb.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentGalleryIndex = idx;
+                renderGallerySlide();
+                updateActiveThumbnail();
+            });
+
+            galleryThumbnails.appendChild(thumb);
+        });
+    }
+
+    function updateActiveThumbnail() {
+        const thumbs = galleryThumbnails.querySelectorAll('.gallery-thumb');
+        thumbs.forEach((t, i) => {
+            if (i === currentGalleryIndex) {
+                t.classList.add('active');
+                t.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            } else {
+                t.classList.remove('active');
+            }
+        });
+    }
+
+    // Keyboard navigation (Escape, ArrowLeft, ArrowRight)
+    document.addEventListener('keydown', (e) => {
+        if (!galleryModal || !galleryModal.classList.contains('open')) return;
+        if (e.key === 'Escape') {
+            closeGalleryModal();
+        } else if (e.key === 'ArrowLeft') {
+            navigateGallery(-1);
+        } else if (e.key === 'ArrowRight') {
+            navigateGallery(1);
+        }
+    });
 });

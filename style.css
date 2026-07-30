@@ -1004,7 +1004,7 @@ body {
 .date-cell {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.8rem;
 }
 
 .date-day {
@@ -1012,6 +1012,9 @@ body {
     font-size: 2.2rem;
     color: var(--color-text-primary);
     line-height: 1;
+    min-width: 44px;
+    display: inline-block;
+    text-align: center;
 }
 
 .date-month-year {
@@ -1592,4 +1595,267 @@ body {
 .animate-up.is-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Gallery Pills & Date Row Hover */
+.date-row {
+    cursor: pointer;
+}
+
+.date-row:hover {
+    background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.venue-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.view-gallery-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    font-family: var(--font-body);
+    color: var(--color-text-muted);
+    background-color: var(--color-bg-secondary);
+    border: 1px solid #222;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    transition: all var(--transition-speed) ease;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.date-row:hover .view-gallery-pill {
+    border-color: var(--color-accent);
+    color: #fff;
+    background-color: rgba(191, 19, 19, 0.15);
+    box-shadow: 0 0 10px var(--color-accent-glow);
+}
+
+/* Interactive Date Gallery Modal / Carousel */
+.gallery-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.gallery-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.gallery-backdrop {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(5, 5, 5, 0.94);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.gallery-content {
+    position: relative;
+    z-index: 2;
+    width: 92%;
+    max-width: 1050px;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(14, 14, 14, 0.96);
+    border: 1px solid #252525;
+    border-top: 3px solid var(--color-accent);
+    border-radius: var(--border-radius);
+    padding: 1.8rem 2rem 1.4rem;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.95);
+}
+
+.gallery-close-btn {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.4rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-bg-secondary);
+    border: 1px solid #333;
+    color: var(--color-text-secondary);
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    z-index: 10;
+}
+
+.gallery-close-btn:hover {
+    border-color: var(--color-accent);
+    color: #fff;
+    background-color: var(--color-accent);
+    transform: scale(1.1);
+}
+
+.gallery-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #222;
+    padding-bottom: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.gallery-venue-name {
+    font-family: var(--font-metal-primary);
+    font-size: 1.8rem;
+    color: var(--color-text-primary);
+    line-height: 1.1;
+    letter-spacing: 1px;
+}
+
+.gallery-location {
+    font-size: 0.9rem;
+    color: var(--color-accent);
+    font-family: var(--font-metal-secondary);
+    letter-spacing: 1px;
+    display: block;
+    margin-top: 0.2rem;
+}
+
+.gallery-counter {
+    font-family: var(--font-metal-secondary);
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    background-color: #111;
+    padding: 0.4rem 0.9rem;
+    border-radius: var(--border-radius);
+    border: 1px solid #222;
+    letter-spacing: 1px;
+}
+
+.gallery-stage {
+    position: relative;
+    width: 100%;
+    height: 56vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    background-color: #080808;
+}
+
+.gallery-media-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-media-item {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.gallery-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(15, 15, 15, 0.75);
+    backdrop-filter: blur(8px);
+    border: 1px solid #333;
+    color: #fff;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease;
+    z-index: 5;
+}
+
+.gallery-nav-btn.prev { left: 1rem; }
+.gallery-nav-btn.next { right: 1rem; }
+
+.gallery-nav-btn:hover {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
+    color: #fff;
+    box-shadow: 0 0 15px var(--color-accent-glow);
+}
+
+.gallery-thumbnails {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1.2rem;
+    overflow-x: auto;
+    padding-bottom: 0.3rem;
+}
+
+.gallery-thumb {
+    width: 65px;
+    height: 45px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 2px solid #222;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all var(--transition-speed) ease;
+    flex-shrink: 0;
+}
+
+.gallery-thumb img, .gallery-thumb video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-thumb.active, .gallery-thumb:hover {
+    opacity: 1;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 10px var(--color-accent-glow);
+}
+
+@media (max-width: 768px) {
+    .gallery-content {
+        padding: 1.2rem 1rem 1rem;
+        width: 95%;
+    }
+    .gallery-venue-name {
+        font-size: 1.4rem;
+    }
+    .gallery-stage {
+        height: 48vh;
+    }
+    .gallery-nav-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+    .gallery-nav-btn.prev { left: 0.4rem; }
+    .gallery-nav-btn.next { right: 0.4rem; }
+    .venue-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+    }
 }
