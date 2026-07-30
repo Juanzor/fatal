@@ -207,7 +207,7 @@ body {
 }
 
 .nav-logo {
-    height: 36px;
+    height: 48px;
     width: auto;
     display: block;
     filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
@@ -1173,7 +1173,7 @@ body {
 }
 
 .footer-logo-img {
-    height: 65px;
+    height: 120px;
     width: auto;
     display: block;
     margin: 0 auto;
