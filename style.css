@@ -1379,6 +1379,9 @@ body {
 }
 
 @media (max-width: 768px) {
+    .footer-nav {
+        display: none;
+    }
     .footer-info {
         flex-direction: column;
         align-items: center;
