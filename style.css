@@ -1056,10 +1056,19 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* Responsive Gigs layout (convert table into block cards on small devices) */
+/* Responsive Gigs layout (convert table into sleek metal cards on mobile) */
 @media (max-width: 768px) {
+    .dates-meta-bar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
     .dates-table-wrapper {
         border: none;
+        overflow: visible;
+        background: transparent;
     }
     
     .dates-table, .dates-table thead, .dates-table tbody, .dates-table th, .dates-table td, .dates-table tr {
@@ -1067,7 +1076,7 @@ body {
     }
     
     .dates-table thead {
-        display: none; /* Hide header completely */
+        display: none; /* Hide desktop header */
     }
     
     .dates-table {
@@ -1075,36 +1084,116 @@ body {
     }
     
     .date-row {
+        display: flex;
+        flex-direction: column;
         background-color: var(--color-bg-secondary);
-        border: 1px solid #1a1a1a;
-        margin-bottom: 1.5rem;
-        padding: 1.5rem;
+        border: 1px solid #1c1c1c;
+        border-left: 4px solid var(--color-accent);
+        margin-bottom: 1.2rem;
+        padding: 1.2rem 1.4rem;
         border-radius: var(--border-radius);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+        gap: 0.8rem;
+        position: relative;
+        transition: all var(--transition-speed) ease;
+        cursor: pointer;
     }
     
-    .date-row:hover {
-        border-color: #333;
-        background-color: var(--color-bg-secondary);
+    .date-row:hover, .date-row:active {
+        border-color: var(--color-accent);
+        background-color: #141414;
+        transform: translateY(-2px);
     }
     
     .date-row td {
-        padding: 0.5rem 0;
+        padding: 0;
         border: none;
+        width: 100%;
     }
     
     .date-row td::before {
-        font-family: var(--font-metal-secondary);
-        color: var(--color-accent);
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        letter-spacing: 1px;
-        display: block;
-        margin-bottom: 0.2rem;
+        display: none !important;
     }
     
-    .date-row td.date-cell::before { content: 'Fecha'; }
-    .date-row td.location-cell::before { content: 'Ubicación'; }
-    .date-row td.venue-cell::before { content: 'Establecimiento'; }
+    /* Top Row in Card: Date Badge & Location */
+    .date-row td.date-cell {
+        display: flex;
+        align-items: center;
+        gap: 0.9rem;
+    }
+
+    .date-row .date-day {
+        font-size: 2.2rem;
+        min-width: 38px;
+        line-height: 1;
+        color: #fff;
+    }
+
+    .date-row td.location-cell {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        border-bottom: 1px solid #1a1a1a;
+        padding-bottom: 0.8rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .date-row .city {
+        font-size: 1rem;
+        font-weight: 700;
+        color: #fff;
+        display: inline;
+    }
+
+    .date-row .country {
+        font-size: 0.85rem;
+        color: var(--color-text-muted);
+        display: inline;
+    }
+
+    .date-row .country::before {
+        content: "•";
+        margin-right: 0.4rem;
+        color: var(--color-accent);
+    }
+
+    .date-row td.venue-cell {
+        width: 100%;
+    }
+    
+    .venue-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.9rem;
+        width: 100%;
+    }
+
+    .venue-name {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--color-text-primary);
+        letter-spacing: 0.5px;
+    }
+
+    .view-gallery-pill {
+        width: 100%;
+        justify-content: center;
+        padding: 0.65rem 1rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        background-color: #0f0f0f;
+        border: 1px solid #282828;
+        border-radius: var(--border-radius);
+        color: var(--color-text-secondary);
+        transition: all var(--transition-speed) ease;
+    }
+
+    .date-row:hover .view-gallery-pill, .date-row:active .view-gallery-pill {
+        background-color: var(--color-accent);
+        border-color: var(--color-accent);
+        color: #fff;
+        box-shadow: 0 0 15px var(--color-accent-glow);
+    }
 }
 
 /* Contact / Call-to-action Section */
